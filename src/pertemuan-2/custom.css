@@ -1,0 +1,119 @@
+/* Styling untuk keseluruhan halaman */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffe0f0; /* Pink Pastel */
+    /* Pola background bulat-bulat lucu (polkadot) warna kuning muda */
+    background-image: radial-gradient(#fff9c4 15%, transparent 16%);
+    background-size: 30px 30px;
+    margin: 0;
+    padding: 50px 20px;
+    color: #5d4037; /* Warna cokelat tua supaya lebih lembut dibanding hitam */
+}
+
+/* Container utama dengan efek telinga kucing */
+.card {
+    max-width: 500px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 30px; /* Sangat membulat */
+    box-shadow: 0 10px 0px #ffc1e3; /* Shadow pink tebal (gaya pop-art) */
+    border: 4px solid #fff176; /* Border Kuning Pastel */
+    position: relative; /* Untuk posisi telinga */
+}
+
+/* Kreasi Telinga Kucing di atas Card */
+.card::before, .card::after {
+    content: '';
+    position: absolute;
+    top: -25px;
+    width: 50px;
+    height: 50px;
+    background: white;
+    border: 4px solid #fff176;
+    border-radius: 10px;
+}
+
+.card::before {
+    left: 20px;
+    transform: rotate(-15deg);
+    border-bottom: none;
+    border-right: none;
+}
+
+.card::after {
+    right: 20px;
+    transform: rotate(15deg);
+    border-bottom: none;
+    border-left: none;
+}
+
+/* Header utama */
+h1 {
+    color: #ff80ab; /* Pink cerah */
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px #fff176; /* Shadow kuning pada teks */
+}
+
+/* Paragraf */
+p {
+    font-size: 16px;
+    line-height: 1.6;
+    background: #fffde7; /* Box teks kuning sangat muda */
+    padding: 15px;
+    border-radius: 15px;
+    border-left: 5px solid #fff176;
+}
+
+/* Garis pemisah yang lucu */
+hr {
+    border: none;
+    height: 4px;
+    background: repeating-linear-gradient(
+      90deg,
+      #ffb6c1,
+      #ffb6c1 10px,
+      #fff176 10px,
+      #fff176 20px
+    ); /* Garis belang-belang pink-kuning */
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+/* Gambar Kucing */
+img {
+    display: block;
+    margin: 0 auto 20px;
+    max-width: 100%;
+    border-radius: 20px;
+    border: 5px solid #fff176;
+    transition: transform 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.05) rotate(2deg); /* Efek goyang saat kursor di atas gambar */
+}
+
+/* Greeting */
+small {
+    display: block;
+    font-style: italic;
+    text-align: center;
+    color: #ff80ab;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* Tambahan dekorasi cakar di pojok bawah */
+.card::after {
+    content: '🐾';
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    font-size: 24px;
+    border: none;
+    background: none;
+    transform: rotate(0);
+}
