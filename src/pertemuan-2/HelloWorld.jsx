@@ -11,8 +11,8 @@ export default function HelloWorld(){
             <GreetingBinjai/>
             <QuoteText/>
             <UserCard 
-                nama="Fikri" 
-                nim="169412"
+                nama="Ariana Grande" 
+                nim="101010"
                 tanggal={new Date().toLocaleDateString()}
               />
             <UserCard 
@@ -34,7 +34,7 @@ function GreetingBinjai(){
 }
 
 function QuoteText() {
-    const text = "Mulutmu Harimaumu";
+    const text = "Mulutmu Harimau mu";
     const text2 = "Aku ingin jadi macan";
     return (
         <div>
