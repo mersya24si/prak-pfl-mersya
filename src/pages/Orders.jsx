@@ -4,7 +4,7 @@ import PageHeader from "../components/PageHeader";
 export default function Orders() {
     return (
         <div id="dashboard-container">
-            <PageHeader />
+            <PageHeader title = "Customers" />
         <p>Ini Halaman Orders</p>
            
         </div>

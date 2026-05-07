@@ -5,7 +5,7 @@ export default function Dashboard() {
     return (
         <div id="dashboard-container">
             {/* 2️⃣ Menambahkan Komponen PageHeader */}
-            <PageHeader />
+            <PageHeader title = "Dashboard" />
 
             {/* 3️⃣ Dashboard Grid Layout */}
             <div id="dashboard-grid" className="p-5 grid sm:grid-cols-2 md:grid-cols-4 gap-4">
