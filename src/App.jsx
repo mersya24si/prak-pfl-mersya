@@ -1,36 +1,49 @@
-import { useState } from 'react'
-import Sidebar from './layouts/Sidebar';
-import Header from './layouts/Header';
-import Dashboard from './pages/Dashboard';
-import './assets/tailwind.css';
-import { Route, Routes } from 'react-router-dom';
-import Customers from './pages/Customers';
-import Orders from './pages/Orders';
-import NotFound from './pages/NotFound';
+import React, { Suspense, useState } from "react";
+// import Dashboard from "./pages/Dashboard";
+import "./assets/tailwind.css";
+import { Route, Routes } from "react-router-dom";
+import Loading from "./components/Loading";
+// import Customers from "./pages/Customers";
+// import Orders from "./pages/Orders";
+// import NotFound from "./pages/NotFound";
+// import MainLayout from "./layouts/MainLayout";
+// import AuthLayout from "./layouts/AuthLayout";
+// import Login from "./pages/auth/Login";
+// import Register from "./pages/auth/Register";
+// import Forgot from "./pages/auth/Forgot";
+const Dashboard = React.lazy(() => import("./pages/Dashboard"));
+const Orders = React.lazy(() => import("./pages/Orders"));
+const Register = React.lazy(() => import("./pages/auth/Register"));
+const Login = React.lazy(() => import("./pages/auth/Login"));
+const Forgot = React.lazy(() => import("./pages/auth/Forgot"));
+const NotFound = React.lazy(() => import("./pages/NotFound"));
+const Customers = React.lazy(() => import("./pages/Customers"));
+const MainLayout = React.lazy(() => import("./layouts/MainLayout"));
+const AuthLayout = React.lazy(() => import("./layouts/AuthLayout"));
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
-   <div className="flex min-h-screen bg-gray-50">
-    {/* 1. Sidebar ada di sisi kiri */}
-    <Sidebar />
-
-    <div className="flex-1 p-4">
-    <Header />
-    
-    <Routes>
-        <Route path="*" element={<NotFound />} />
-        <Route path="/error-400" element={<NotFound code="400" description="Bad Request: Permintaan tidak valid." />} />
-        <Route path="/error-401" element={<NotFound code="401" description="Unauthorized: Silahkan login terlebih dahulu." />} />
-        <Route path="/error-403" element={<NotFound code="403" description="Forbidden: Anda tidak punya akses ke sini." />} />
+    <Suspense fallback={<Loading />}>
+      <Routes>
+      <Route element={<MainLayout />}>
         <Route path="/" element={<Dashboard />} />
         <Route path="/orders" element={<Orders />} />
         <Route path="/customers" element={<Customers />} />
+        <Route path="/error-400" element={<error-400 />} />
+        <Route path="/error-401" element={<error-401 />} />
+        <Route path="/error-403" element={<error-403 />} />
+      </Route>
+      <Route element={<AuthLayout />}>
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/forgot" element={<Forgot />} />
+      </Route>
     </Routes>
-</div>
-  </div>
-  )
+    </Suspense>
+    
+  );
 }
 
-export default App
+export default App;

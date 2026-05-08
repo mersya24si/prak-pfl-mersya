@@ -57,7 +57,7 @@ export default function Sidebar() {
                         </div>
                     </div>
                     <div className="w-[35%] flex justify-end">
-                        <img id="footer-avatar" src="public/img/profil.jpg" alt="avatar" className="w-20 h-20 rounded-full border-2 border-white/50" />
+                        <img id="footer-avatar" src="https://i.pinimg.com/736x/eb/1a/a3/eb1aa3402f25e31422b083bc4c65e49d.jpg" alt="avatar" className="w-20 h-20 rounded-full border-2 border-white/50" />
                     </div>
                 </div>
                 

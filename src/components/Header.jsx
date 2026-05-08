@@ -90,11 +90,11 @@ export default function Header() {
              
                 <div id="profile-container" className="flex items-center space-x-4 border-l pl-4 border-gray-300">
                     <span id="profile-text" className="text-gray-700 hidden md:block">
-                        Hello, <b>Mersya Meylani Putri</b>
+                        Hello, <b>Mersya Grande</b>
                     </span>
                     <img
                         id="profile-avatar"
-                        src="https://avatar.iran.liara.run/public/28"
+                        src="https://i.pinimg.com/736x/eb/1a/a3/eb1aa3402f25e31422b083bc4c65e49d.jpg"
                         className="w-10 h-10 rounded-full border-2 border-white shadow-sm"
                         alt="Profile Avatar"
                     />
